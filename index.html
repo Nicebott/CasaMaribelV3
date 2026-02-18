@@ -7,15 +7,10 @@
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-
-    <!-- Android -->
     <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
-
-    <!-- Apple / iPhone -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-    <!-- Color barra navegador móvil -->
     <meta name="theme-color" content="#ffffff" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -50,14 +45,14 @@
     <link rel="canonical" href="https://lasterrenasapartments.com" />
     <link rel="alternate" hreflang="es" href="https://lasterrenasapartments.com" />
 
+    <!-- STRUCTURED DATA -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LodgingBusiness",
       "name": "Casa Maribel Las Terrenas",
-      "alternateName": ["Apartamentos Casa Maribel", "Casa Maribel Apartamentos en Las Terrenas", "Alojamiento Casa Maribel"],
       "image": ["/WhatsApp_Image_2026-02-09_at_6.08.04_PM.jpeg"],
-      "description": "Casa Maribel ofrece alquiler de apartamentos y Casa Pluda en Las Terrenas, República Dominicana. Alojamiento completo con WiFi, aire acondicionado y cerca de la playa. Apartamentos A, B, D y Casa Pluda disponibles.",
+      "description": "Casa Maribel ofrece alquiler de apartamentos y Casa Pluda en Las Terrenas, República Dominicana.",
       "telephone": ["+1 (829) 697-4277", "+1 (809) 967-2175"],
       "email": "ferminmaribel@casamaribel.com.do",
       "address": {
@@ -72,40 +67,7 @@
         "longitude": "-69.5503187"
       },
       "url": "https://lasterrenasapartments.com",
-      "priceRange": "$85 - $215",
-      "starRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "amenityFeature": [
-        {"@type": "LocationFeatureSpecification", "name": "WiFi gratuito de alta velocidad"},
-        {"@type": "LocationFeatureSpecification", "name": "Aire acondicionado"},
-        {"@type": "LocationFeatureSpecification", "name": "Cocina completa equipada"},
-        {"@type": "LocationFeatureSpecification", "name": "Estacionamiento gratuito"},
-        {"@type": "LocationFeatureSpecification", "name": "Cerca de la playa"},
-        {"@type": "LocationFeatureSpecification", "name": "Piscina"}
-      ],
-      "numberOfRooms": 4,
-      "petsAllowed": false,
-      "checkinTime": "15:00",
-      "checkoutTime": "11:00",
-      "areaServed": {
-        "@type": "City",
-        "name": "Las Terrenas",
-        "containedInPlace": {
-          "@type": "AdministrativeArea",
-          "name": "Samaná"
-        }
-      },
-      "sameAs": [
-        "https://www.facebook.com",
-        "https://www.instagram.com"
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "47"
-      }
+      "priceRange": "$85 - $215"
     }
     </script>
 
@@ -114,13 +76,64 @@
       "@context": "https://schema.org",
       "@type": "ItemList",
       "name": "Apartamentos Casa Maribel Las Terrenas",
-      "description": "Lista de apartamentos y casas disponibles en Casa Maribel",
       "numberOfItems": 4,
       "itemListElement": [
-        {"@type": "ListItem","position": 1,"item": {"@type": "Accommodation","name": "Apartamento A - Casa Maribel","offers": {"@type": "Offer","price": "95","priceCurrency": "USD"}}},
-        {"@type": "ListItem","position": 2,"item": {"@type": "Accommodation","name": "Apartamento B - Casa Maribel","offers": {"@type": "Offer","price": "90","priceCurrency": "USD"}}},
-        {"@type": "ListItem","position": 3,"item": {"@type": "Accommodation","name": "Apartamento D - Casa Maribel","offers": {"@type": "Offer","price": "85","priceCurrency": "USD"}}},
-        {"@type": "ListItem","position": 4,"item": {"@type": "Accommodation","name": "Casa Pluda - Casa Maribel","offers": {"@type": "Offer","price": "215","priceCurrency": "USD"}}}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Accommodation",
+            "name": "Apartamento A - Casa Maribel",
+            "offers": {
+              "@type": "Offer",
+              "price": "95",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Accommodation",
+            "name": "Apartamento B - Casa Maribel",
+            "offers": {
+              "@type": "Offer",
+              "price": "90",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Accommodation",
+            "name": "Apartamento D - Casa Maribel",
+            "offers": {
+              "@type": "Offer",
+              "price": "85",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Accommodation",
+            "name": "Casa Pluda - Casa Maribel",
+            "offers": {
+              "@type": "Offer",
+              "price": "215",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        }
       ]
     }
     </script>
