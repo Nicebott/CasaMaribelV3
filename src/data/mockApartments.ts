@@ -72,10 +72,10 @@ export const mockApartments: Apartment[] = [
       'Ventiladores'
     ],
     images: [
-      '/Apartamento D/23d1a17b-be30-4654-a771-d63bbc973a02.avif',
-      '/Apartamento D/5a50bb5b-33e6-4cf9-82f5-2ffa65da6b40.avif',
       '/Apartamento D/a55d327f-449b-4def-b089-60ccf1ebc895.jpg',
+      '/Apartamento D/5a50bb5b-33e6-4cf9-82f5-2ffa65da6b40.avif',
       '/Apartamento D/ca922b07-7323-4506-acfb-377f9d80685a.jpg',
+      '/Apartamento D/23d1a17b-be30-4654-a771-d63bbc973a02.avif',
       '/Apartamento D/ea6e04d2-df1d-4404-b179-352ab8b9d324.avif'
     ],
     available: true,
