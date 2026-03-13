@@ -113,5 +113,65 @@ export const mockApartments: Apartment[] = [
     available: true,
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString()
+  },
+  {
+    id: '5',
+    title: 'Apartamento Pluda 1 - Casa Maribel',
+    description: 'Hermoso apartamento Casa Maribel en Las Terrenas con excelente ubicación. Ideal para familias o grupos que buscan un alojamiento espacioso y confortable cerca de la playa. Cuenta con todas las comodidades para una estadía inolvidable.',
+    bedrooms: 1,
+    bathrooms: 1,
+    max_guests: 2,
+    price_per_night: 110,
+    amenities: [
+      'WiFi de alta velocidad',
+      'Aire acondicionado',
+      'Cocina completamente equipada',
+      'Balcón amplio',
+      'A minutos de la playa',
+      'Estacionamiento disponible',
+      'TV por cable',
+      'Agua caliente'
+    ],
+    images: [
+      '/Apartamento-pluda-1/ap1.jpeg',
+      '/Apartamento-pluda-1/ap2.jpeg',
+      '/Apartamento-pluda-1/ap3.jpeg',
+      '/Apartamento-pluda-1/ap4.jpeg',
+      '/Apartamento-pluda-1/ap5.jpeg',
+      '/Apartamento-pluda-1/ap6.jpeg'
+    ],
+    available: true,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: '6',
+    title: 'Apartamento Pluda 2 - Casa Maribel',
+    description: 'Moderno apartamento Casa Maribel en Las Terrenas, perfecto para quienes buscan comodidad y estilo. Alojamiento recientemente renovado con acabados de primera calidad, ideal para parejas o familias pequeñas que desean disfrutar del paraíso caribeño.',
+    bedrooms: 1,
+    bathrooms: 1,
+    max_guests: 2,
+    price_per_night: 110,
+    amenities: [
+      'WiFi incluido',
+      'Aire acondicionado',
+      'Cocina moderna',
+      'Terraza privada',
+      'Cerca de restaurantes',
+      'Zona tranquila',
+      'Ventiladores de techo',
+      'Ropa de cama premium'
+    ],
+    images: [
+      '/Apartamento-pluda-2/ap2.jpeg',
+      '/Apartamento-pluda-2/ap3.jpeg',
+      '/Apartamento-pluda-2/ap4.jpeg',
+      '/Apartamento-pluda-2/ap5.jpeg',
+      '/Apartamento-pluda-2/ap6.jpeg',
+      '/Apartamento-pluda-2/ap7.jpeg' 
+    ],
+    available: true,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
   }
 ];
