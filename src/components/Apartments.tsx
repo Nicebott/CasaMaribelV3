@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Home, Users, Bath, Bed, Check, Images } from 'lucide-react';
+import { Home, Users, Bath, Bed, Check, Images, Calendar } from 'lucide-react';
 import { Apartment } from '../types';
 import PhotoModal from './PhotoModal';
 import { mockApartments } from '../data/mockApartments';
@@ -15,15 +15,20 @@ export default function Apartments({ onBookClick }: ApartmentsProps) {
   const handleWhatsAppBooking = (apartment: Apartment) => {
     const phoneNumber = '18296974277';
     const article = apartment.title.toLowerCase().includes('casa') ? 'la' : 'el';
-    const message = `Hola! Estoy interesado en reservar ${article} *${apartment.title}*
+    const availabilityText = apartment.available
+      ? 'Me gustaría obtener más información y realizar una reserva.'
+      : 'Me gustaría saber cuándo estará disponible y obtener más información.';
+
+    const message = `Hola! Estoy interesado en ${apartment.available ? 'reservar' : 'consultar sobre'} ${article} *${apartment.title}*
 
 📋 Detalles:
 - ${apartment.bedrooms} ${apartment.bedrooms === 1 ? 'Habitación' : 'Habitaciones'}
 - ${apartment.bathrooms} ${apartment.bathrooms === 1 ? 'Baño' : 'Baños'}
 - Hasta ${apartment.max_guests} huéspedes
 - $${apartment.price_per_night} por noche
+${apartment.available ? '' : '- Estado: No disponible actualmente'}
 
-Me gustaría obtener más información y realizar una reserva.`;
+${availabilityText}`;
 
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
@@ -54,25 +59,40 @@ Me gustaría obtener más información y realizar una reserva.`;
             {apartments.map((apartment) => (
               <div
                 key={apartment.id}
-                className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                className={`bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 ${!apartment.available ? 'opacity-90' : ''}`}
               >
                 {apartment.images && apartment.images.length > 0 && (
-                  <div className="h-48 sm:h-56 md:h-64 bg-gradient-to-br from-blue-200 to-cyan-200 overflow-hidden">
+                  <div className="h-48 sm:h-56 md:h-64 bg-gradient-to-br from-blue-200 to-cyan-200 overflow-hidden relative">
                     <img
                       src={apartment.images[0]}
                       alt={apartment.title}
-                      className="w-full h-full object-cover"
+                      className={`w-full h-full object-cover ${!apartment.available ? 'opacity-60' : ''}`}
                       onError={(e) => {
                         (e.target as HTMLImageElement).style.display = 'none';
                       }}
                     />
+                    {!apartment.available && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
+                        <div className="bg-red-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-base shadow-lg flex items-center gap-2">
+                          <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />
+                          No Disponible
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
 
                 <div className="p-5 sm:p-6 md:p-8">
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
-                    {apartment.title}
-                  </h3>
+                  <div className="flex items-start justify-between mb-2 sm:mb-3">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 flex-1">
+                      {apartment.title}
+                    </h3>
+                    {!apartment.available && (
+                      <span className="bg-red-100 text-red-700 text-xs font-semibold px-2 py-1 rounded-full ml-2 flex-shrink-0">
+                        Ocupado
+                      </span>
+                    )}
+                  </div>
                   <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                     {apartment.description}
                   </p>
@@ -122,9 +142,13 @@ Me gustaría obtener más información y realizar una reserva.`;
                       </div>
                       <button
                         onClick={() => handleWhatsAppBooking(apartment)}
-                        className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
+                        className={`w-full sm:w-auto px-6 sm:px-8 py-3 rounded-full font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base ${
+                          apartment.available
+                            ? 'bg-blue-600 text-white hover:bg-blue-700'
+                            : 'bg-gray-300 text-gray-700 hover:bg-gray-400'
+                        }`}
                       >
-                        Reservar Ahora
+                        {apartment.available ? 'Reservar Ahora' : 'Consultar Disponibilidad'}
                       </button>
                     </div>
                     {apartment.images && apartment.images.length > 1 && (
