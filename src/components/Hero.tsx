@@ -19,6 +19,7 @@ export default function Hero() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight px-2">
             Casa Maribel Las Terrenas
           </h1>
+
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light max-w-3xl mx-auto px-4">
             Tu mejor alojamiento en Las Terrenas - Apartamentos y Casa Pluda
           </p>
