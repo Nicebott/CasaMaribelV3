@@ -13,6 +13,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         taxi: resolve(__dirname, 'taxi.html'),
+        fourwheels: resolve(__dirname, 'fourwheels.html'),
       },
     },
   },
