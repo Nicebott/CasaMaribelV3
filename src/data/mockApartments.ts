@@ -25,7 +25,7 @@ export const mockApartments: Apartment[] = [
       '/Apartamento A/bbfb88ca-3ae5-4571-8f51-4462adaa233e.jpg',
       '/Apartamento A/c2ef26d6-16ef-4ae1-8697-ee9c4b2ee67a.avif'
     ],
-    available: false,
+    available: true,
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString()
   },
@@ -168,9 +168,9 @@ export const mockApartments: Apartment[] = [
       '/Apartamento-pluda-2/ap4.jpeg',
       '/Apartamento-pluda-2/ap5.jpeg',
       '/Apartamento-pluda-2/ap6.jpeg',
-      '/Apartamento-pluda-2/ap7.jpeg' 
+      '/Apartamento-pluda-2/ap7.jpeg'
     ],
-    available: false,
+    available: true,
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString()
   }
