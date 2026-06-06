@@ -15,12 +15,14 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <Hero />
-      <About />
-      <Apartments onBookClick={handleBookClick} />
-      <Location />
-      <Contact selectedApartmentId={selectedApartmentId} />
+    <div className="min-h-screen bg-white flex flex-col">
+      <main className="flex-grow">
+        <Hero />
+        <About />
+        <Apartments onBookClick={handleBookClick} />
+        <Location />
+        <Contact selectedApartmentId={selectedApartmentId} />
+      </main>
       <Footer />
     </div>
   );

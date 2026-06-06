@@ -4,68 +4,80 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
-          <div>
-            <h3 className="text-white text-lg sm:text-xl font-bold mb-3 sm:mb-4">Casa Maribel Las Terrenas</h3>
-            <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
-              Alojamiento Casa Maribel - Tu hogar lejos de casa en el paraíso caribeño. Apartamentos en Las Terrenas con todo el confort que mereces.
+    <footer className="bg-[#0a0a0a] text-gray-400">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 py-20 sm:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-16 mb-16">
+          <div className="lg:col-span-2">
+            <h3 className="text-white text-xl font-light tracking-tight mb-6">Casa <span className="font-medium">Maribel</span></h3>
+            <p className="text-gray-500 font-light leading-relaxed max-w-sm">
+              Tu hogar lejos de casa en el paraíso caribeño. Apartamentos en Las Terrenas con un diseño pensado en tu confort y tranquilidad.
             </p>
           </div>
 
           <div>
-            <h3 className="text-white text-base sm:text-lg font-semibold mb-3 sm:mb-4">Contacto</h3>
-            <div className="space-y-2 sm:space-y-3">
-              <div className="flex items-start sm:items-center gap-2 sm:gap-3 text-gray-400 hover:text-white transition-colors">
-                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 mt-0.5 sm:mt-0" />
-                <span className="text-xs sm:text-sm break-words">Las Terrenas, República Dominicana</span>
-              </div>
-              <div className="flex items-start sm:items-center gap-2 sm:gap-3 text-gray-400 hover:text-white transition-colors">
-                <Mail className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 mt-0.5 sm:mt-0" />
-                <span className="text-xs sm:text-sm break-all">ferminmaribel@casamaribel.com.do</span>
-              </div>
-              <div className="flex items-center gap-2 sm:gap-3 text-gray-400 hover:text-white transition-colors">
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                <span className="text-xs sm:text-sm">+1 (829) 697-4277</span>
-              </div>
-              <div className="flex items-center gap-2 sm:gap-3 text-gray-400 hover:text-white transition-colors">
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                <span className="text-xs sm:text-sm">+1 (809) 967-2175</span>
-              </div>
-            </div>
+            <h3 className="text-white text-sm uppercase tracking-wider font-medium mb-6">Contacto</h3>
+            <ul className="space-y-4 font-light text-sm">
+              <li className="flex items-start gap-3 hover:text-white transition-colors">
+                <MapPin strokeWidth={1.5} className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                <span>Las Terrenas, República Dominicana</span>
+              </li>
+              <li className="flex items-start gap-3 hover:text-white transition-colors">
+                <Mail strokeWidth={1.5} className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                <span className="break-all">ferminmaribel@casamaribel.com.do</span>
+              </li>
+              <li className="flex items-center gap-3 hover:text-white transition-colors">
+                <Phone strokeWidth={1.5} className="w-4 h-4 flex-shrink-0" />
+                <span>+1 (829) 697-4277</span>
+              </li>
+              <li className="flex items-center gap-3 hover:text-white transition-colors">
+                <Phone strokeWidth={1.5} className="w-4 h-4 flex-shrink-0" />
+                <span>+1 (809) 967-2175</span>
+              </li>
+            </ul>
           </div>
 
-          <div className="sm:col-span-2 md:col-span-1">
-            <h3 className="text-white text-base sm:text-lg font-semibold mb-3 sm:mb-4">Síguenos</h3>
-            <div className="flex gap-3 sm:gap-4">
+          <div>
+            <h3 className="text-white text-sm uppercase tracking-wider font-medium mb-6">Síguenos</h3>
+            <div className="flex gap-5">
               <a
                 href="#"
-                className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-white transition-colors duration-300"
                 aria-label="Facebook"
               >
-                <Facebook className="w-4 h-4 sm:w-5 sm:h-5" />
+                <Facebook strokeWidth={1.5} className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-white transition-colors duration-300"
                 aria-label="Instagram"
               >
-                <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
+                <Instagram strokeWidth={1.5} className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-400 transition-colors duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-white transition-colors duration-300"
                 aria-label="Twitter"
               >
-                <Twitter className="w-4 h-4 sm:w-5 sm:h-5" />
+                <Twitter strokeWidth={1.5} className="w-5 h-5" />
               </a>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-6 sm:pt-8 text-center text-gray-400 text-xs sm:text-sm">
-          <p>&copy; {currentYear} Casa Maribel Las Terrenas - Apartamentos Casa Maribel. Todos los derechos reservados.</p>
+        <div className="border-t border-gray-800/50 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs font-light text-gray-500">
+            &copy; {currentYear} Casa Maribel Las Terrenas. Todos los derechos reservados.
+          </p>
+          <div className="flex gap-6 text-xs font-light text-gray-500">
+            <a href="#" className="hover:text-white transition-colors">Términos</a>
+            <a href="#" className="hover:text-white transition-colors">Privacidad</a>
+          </div>
         </div>
       </div>
     </footer>

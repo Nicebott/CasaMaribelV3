@@ -47,7 +47,8 @@ export default function PhotoModal({ isOpen, images, title, onClose }: PhotoModa
           <img
             key={currentIndex}
             src={images[currentIndex]}
-            alt={`${title} - Foto ${currentIndex + 1}`}
+            alt={`Galería de ${title} - Foto ${currentIndex + 1} de ${images.length} - Alojamiento en Las Terrenas`}
+            loading="lazy"
             className="w-full h-full object-contain"
             onError={(e) => {
               (e.target as HTMLImageElement).src =

@@ -36,45 +36,46 @@ ${availabilityText}`;
   };
 
   return (
-    <section id="apartments" className="py-12 sm:py-16 md:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 sm:mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
-            Apartamentos Casa Maribel Las Terrenas
+    <section id="apartments" className="py-24 sm:py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="text-center mb-16 sm:mb-24">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight">
+            Nuestros <span className="font-medium">Espacios</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-4">
-            Alojamiento completo en Las Terrenas - Espacios cómodos y elegantes diseñados para tu máximo confort
+          <p className="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed font-light">
+            Refugios diseñados con simplicidad y confort para que vivas la experiencia de Las Terrenas en su máxima expresión.
           </p>
         </div>
 
         {apartments.length === 0 ? (
-          <div className="text-center py-12">
-            <Home className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-            <p className="text-xl text-gray-600">
+          <div className="text-center py-24">
+            <Home strokeWidth={1} className="w-16 h-16 text-gray-300 mx-auto mb-6" />
+            <p className="text-xl text-gray-500 font-light">
               Pronto tendremos apartamentos disponibles para ti
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14">
             {apartments.map((apartment) => (
               <div
                 key={apartment.id}
-                className={`bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 ${!apartment.available ? 'opacity-90' : ''}`}
+                className={`group flex flex-col bg-white border border-gray-100 rounded-[2rem] overflow-hidden hover:shadow-xl hover:shadow-black/[0.03] transition-all duration-500 ${!apartment.available ? 'opacity-90' : ''}`}
               >
                 {apartment.images && apartment.images.length > 0 && (
-                  <div className="h-48 sm:h-56 md:h-64 bg-gradient-to-br from-blue-200 to-cyan-200 overflow-hidden relative">
+                  <div className="h-64 sm:h-80 bg-gray-50 overflow-hidden relative">
                     <img
                       src={apartment.images[0]}
-                      alt={apartment.title}
-                      className={`w-full h-full object-cover ${!apartment.available ? 'opacity-60' : ''}`}
+                      alt={`Apartamento vacacional en Las Terrenas - ${apartment.title}`}
+                      loading="lazy"
+                      className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out ${!apartment.available ? 'opacity-60' : ''}`}
                       onError={(e) => {
                         (e.target as HTMLImageElement).style.display = 'none';
                       }}
                     />
                     {!apartment.available && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
-                        <div className="bg-red-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-base shadow-lg flex items-center gap-2">
-                          <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm">
+                        <div className="bg-white text-black px-6 py-3 rounded-full font-medium text-sm flex items-center gap-2">
+                          <Calendar strokeWidth={1.5} className="w-4 h-4" />
                           No Disponible
                         </div>
                       </div>
@@ -82,82 +83,83 @@ ${availabilityText}`;
                   </div>
                 )}
 
-                <div className="p-5 sm:p-6 md:p-8">
-                  <div className="flex items-start justify-between mb-2 sm:mb-3">
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 flex-1">
+                <div className="p-8 sm:p-10 flex-1 flex flex-col">
+                  <div className="flex items-start justify-between mb-4">
+                    <h3 className="text-2xl sm:text-3xl font-medium text-gray-900 tracking-tight">
                       {apartment.title}
                     </h3>
                     {!apartment.available && (
-                      <span className="bg-red-100 text-red-700 text-xs font-semibold px-2 py-1 rounded-full ml-2 flex-shrink-0">
+                      <span className="bg-gray-100 text-gray-500 text-xs font-medium px-3 py-1 rounded-full ml-4 flex-shrink-0">
                         Ocupado
                       </span>
                     )}
                   </div>
-                  <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+                  
+                  <p className="text-gray-500 mb-8 leading-relaxed font-light text-sm sm:text-base">
                     {apartment.description}
                   </p>
 
-                  <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-4 sm:mb-6 pb-4 sm:pb-6 border-b border-gray-200">
-                    <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-gray-700">
-                      <Bed className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm font-medium text-center sm:text-left">
+                  <div className="flex items-center gap-6 mb-8 pb-8 border-b border-gray-100">
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <Bed strokeWidth={1.5} className="w-5 h-5 text-gray-400" />
+                      <span className="text-sm font-light">
                         {apartment.bedrooms} {apartment.bedrooms === 1 ? 'Hab' : 'Habs'}
                       </span>
                     </div>
-                    <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-gray-700">
-                      <Bath className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm font-medium text-center sm:text-left">
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <Bath strokeWidth={1.5} className="w-5 h-5 text-gray-400" />
+                      <span className="text-sm font-light">
                         {apartment.bathrooms} {apartment.bathrooms === 1 ? 'Baño' : 'Baños'}
                       </span>
                     </div>
-                    <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-gray-700">
-                      <Users className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm font-medium text-center sm:text-left">
-                        {apartment.max_guests} Huésp.
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <Users strokeWidth={1.5} className="w-5 h-5 text-gray-400" />
+                      <span className="text-sm font-light">
+                        {apartment.max_guests} Max
                       </span>
                     </div>
                   </div>
 
                   {apartment.amenities && apartment.amenities.length > 0 && (
-                    <div className="mb-4 sm:mb-6">
-                      <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">Comodidades</h4>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2">
+                    <div className="mb-10 flex-1">
+                      <div className="grid grid-cols-2 gap-y-3 gap-x-4">
                         {apartment.amenities.slice(0, 6).map((amenity, index) => (
-                          <div key={index} className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
-                            <Check className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 flex-shrink-0" />
-                            <span className="break-words">{amenity}</span>
+                          <div key={index} className="flex items-center gap-3 text-sm text-gray-600 font-light">
+                            <Check strokeWidth={1.5} className="w-4 h-4 text-gray-900 flex-shrink-0" />
+                            <span className="truncate">{amenity}</span>
                           </div>
                         ))}
                       </div>
                     </div>
                   )}
 
-                  <div className="flex flex-col gap-3">
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+                  <div className="mt-auto">
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-6">
                       <div>
-                        <div className="text-2xl sm:text-3xl font-bold text-gray-900">
+                        <span className="text-3xl font-medium text-gray-900">
                           ${apartment.price_per_night}
-                        </div>
-                        <div className="text-sm text-gray-600">por noche</div>
+                        </span>
+                        <span className="text-sm text-gray-500 font-light ml-2">/ noche</span>
                       </div>
                       <button
                         onClick={() => handleWhatsAppBooking(apartment)}
-                        className={`w-full sm:w-auto px-6 sm:px-8 py-3 rounded-full font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base ${
+                        className={`w-full sm:w-auto px-8 py-3.5 rounded-full text-sm font-medium transition-all duration-300 ${
                           apartment.available
-                            ? 'bg-blue-600 text-white hover:bg-blue-700'
-                            : 'bg-gray-300 text-gray-700 hover:bg-gray-400'
+                            ? 'bg-black text-white hover:bg-gray-800'
+                            : 'bg-gray-100 text-gray-400 cursor-not-allowed'
                         }`}
                       >
-                        {apartment.available ? 'Reservar Ahora' : 'Consultar Disponibilidad'}
+                        {apartment.available ? 'Reservar' : 'Consultar'}
                       </button>
                     </div>
+
                     {apartment.images && apartment.images.length > 1 && (
                       <button
                         onClick={() => setSelectedApartment(apartment)}
-                        className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-full font-medium hover:bg-gray-200 transition-colors duration-300 text-xs sm:text-sm"
+                        className="w-full flex items-center justify-center gap-2 py-3 text-gray-500 hover:text-gray-900 transition-colors duration-300 text-sm font-light group/btn"
                       >
-                        <Images className="w-3 h-3 sm:w-4 sm:h-4" />
-                        Ver todas las fotos ({apartment.images.length})
+                        <Images strokeWidth={1.5} className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
+                        Ver galería completa ({apartment.images.length})
                       </button>
                     )}
                   </div>
