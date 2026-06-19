@@ -141,16 +141,28 @@ ${availabilityText}`;
                         </span>
                         <span className="text-sm text-gray-500 font-light ml-2">/ noche</span>
                       </div>
-                      <button
-                        onClick={() => handleWhatsAppBooking(apartment)}
-                        className={`w-full sm:w-auto px-8 py-3.5 rounded-full text-sm font-medium transition-all duration-300 ${
-                          apartment.available
-                            ? 'bg-black text-white hover:bg-gray-800'
-                            : 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                        }`}
-                      >
-                        {apartment.available ? 'Reservar' : 'Consultar'}
-                      </button>
+                      <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                        <button
+                          onClick={() => handleWhatsAppBooking(apartment)}
+                          className={`w-full sm:w-auto px-8 py-3.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                            apartment.available
+                              ? 'bg-black text-white hover:bg-gray-800'
+                              : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                          }`}
+                        >
+                          {apartment.available ? 'Reservar' : 'Consultar'}
+                        </button>
+                        {apartment.airbnb_link && (
+                          <a
+                            href={apartment.airbnb_link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full sm:w-auto px-8 py-3.5 rounded-full text-sm font-medium transition-all duration-300 bg-[#FF5A5F] text-white hover:bg-[#FF385C] flex items-center justify-center text-center"
+                          >
+                            Airbnb
+                          </a>
+                        )}
+                      </div>
                     </div>
 
                     {apartment.images && apartment.images.length > 1 && (

@@ -18,14 +18,15 @@ export const mockApartments: Apartment[] = [
       'Ropa de cama'
     ],
     images: [
-      '/Apartamento A/1aa57a7a-6ddd-48a6-a49d-e29a325b7f38.avif',
-      '/Apartamento A/70c1cdbf-3f94-4c96-94c0-29b597d6bfc5.avif',
+      '/Apartamento A/c2ef26d6-16ef-4ae1-8697-ee9c4b2ee67a.avif',
+      '/Apartamento A/saladeestar.jpeg',
       '/Apartamento A/740aef24-55f3-4637-9880-9d9ebc6322c6.avif',
       '/Apartamento A/780e0fad-a754-48be-bde6-52f544e7323f.avif',
-      '/Apartamento A/bbfb88ca-3ae5-4571-8f51-4462adaa233e.jpg',
-      '/Apartamento A/c2ef26d6-16ef-4ae1-8697-ee9c4b2ee67a.avif'
+      '/Apartamento A/WhatsApp Image 2026-06-16 at 6.16.08 PM.jpeg',
+      '/Apartamento A/bbfb88ca-3ae5-4571-8f51-4462adaa233e.jpg'
     ],
     available: true,
+    airbnb_link: 'https://www.airbnb.mx/rooms/46020434?unique_share_id=db45497a-57cc-4e98-bd70-1b4ca253053a&viralityEntryPoint=1&s=76',
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString()
   },
@@ -52,6 +53,7 @@ export const mockApartments: Apartment[] = [
       '/Apartamento B/studio-apartment-kitchenette.avif'
     ],
     available: true,
+    airbnb_link: 'https://www.airbnb.mx/rooms/48899326?unique_share_id=6408d5e6-5bc5-4ff3-997a-a2fccc3ecc99&viralityEntryPoint=1&s=76',
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString()
   },
@@ -111,6 +113,7 @@ export const mockApartments: Apartment[] = [
       '/casapluda/813edde7-d19a-49e5-b086-1ee2bcc686d6.jpg'
     ],
     available: true,
+    airbnb_link: 'https://www.airbnb.mx/rooms/1596383484066637432?unique_share_id=185501ea-a060-4a69-9816-c5854de8d463&viralityEntryPoint=1&s=76',
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString()
   },
@@ -141,6 +144,7 @@ export const mockApartments: Apartment[] = [
       '/Apartamento-pluda-1/ap6.jpeg'
     ],
     available: true,
+    airbnb_link: 'https://www.airbnb.mx/rooms/1632164200467835560?unique_share_id=9d7a4f77-3b61-49d7-8f83-d8e3c6d17b9f&viralityEntryPoint=1&s=76',
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString()
   },
@@ -171,6 +175,7 @@ export const mockApartments: Apartment[] = [
       '/Apartamento-pluda-2/ap7.jpeg'
     ],
     available: true,
+    airbnb_link: 'https://www.airbnb.mx/rooms/1633614492709582785?unique_share_id=8127546a-920d-4b7f-b076-90295333f681&viralityEntryPoint=1&s=76',
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString()
   }

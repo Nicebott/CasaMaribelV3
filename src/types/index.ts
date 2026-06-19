@@ -9,6 +9,7 @@ export interface Apartment {
   amenities: string[];
   images: string[];
   available: boolean;
+  airbnb_link?: string;
   created_at: string;
   updated_at: string;
 }

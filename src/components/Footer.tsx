@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#0a0a0a] text-gray-400">
       <div className="max-w-6xl mx-auto px-6 lg:px-8 py-20 sm:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-16 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-16 mb-16">
           <div className="lg:col-span-2">
             <h3 className="text-white text-xl font-light tracking-tight mb-6">Casa <span className="font-medium">Maribel</span></h3>
             <p className="text-gray-500 font-light leading-relaxed max-w-sm">
@@ -34,39 +34,6 @@ export default function Footer() {
                 <span>+1 (809) 967-2175</span>
               </li>
             </ul>
-          </div>
-
-          <div>
-            <h3 className="text-white text-sm uppercase tracking-wider font-medium mb-6">Síguenos</h3>
-            <div className="flex gap-5">
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-white transition-colors duration-300"
-                aria-label="Facebook"
-              >
-                <Facebook strokeWidth={1.5} className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-white transition-colors duration-300"
-                aria-label="Instagram"
-              >
-                <Instagram strokeWidth={1.5} className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-white transition-colors duration-300"
-                aria-label="Twitter"
-              >
-                <Twitter strokeWidth={1.5} className="w-5 h-5" />
-              </a>
-            </div>
           </div>
         </div>
 
